@@ -1,4 +1,4 @@
-import type { Resource } from "../api/resource"
+import type { Resource } from '../api/resource'
 
 export type ShortRelationField = {
   id: number

@@ -4,8 +4,8 @@ import { defu } from 'defu'
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   redmineApiKey: string
-  baseUrl?: string,
-  responseFormat?: 'json'|'xml'
+  baseUrl?: string
+  responseFormat?: 'json' | 'xml'
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -22,7 +22,7 @@ export default defineNuxtModule<ModuleOptions>({
     baseUrl: '',
     responseFormat: 'json'
   },
-  setup (options, nuxt) {
+  setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
