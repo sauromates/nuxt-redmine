@@ -1,7 +1,5 @@
-import MyModule from '../../../src/module'
+import NuxtRedmine from '../../../src/module'
 
 export default defineNuxtConfig({
-  modules: [
-    MyModule
-  ]
+  modules: [NuxtRedmine]
 })

@@ -17,12 +17,13 @@ Find and replace all on all files (CMD+SHIFT+F):
 Redmine REST API integration for Nuxt
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-redmine?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+  <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-redmine?file=playground%2Fapp.vue) -->
+  <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
+
 - ⛰ &nbsp;Foo
 - 🚠 &nbsp;Bar
 - 🌲 &nbsp;Baz
@@ -46,9 +47,7 @@ npm install --save-dev nuxt-redmine
 
 ```js
 export default defineNuxtConfig({
-  modules: [
-    'nuxt-redmine'
-  ]
+  modules: ['nuxt-redmine']
 })
 ```
 
@@ -81,14 +80,12 @@ npm run release
 ```
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-redmine/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/nuxt-redmine
-
 [npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-redmine.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/nuxt-redmine
-
 [license-src]: https://img.shields.io/npm/l/nuxt-redmine.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://npmjs.com/package/nuxt-redmine
-
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
