@@ -1,8 +1,9 @@
 {
-  "name": "my-module",
+  "name": "nuxt-redmine",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "description": "Redmine REST API integration for Nuxt",
+  "repository": "sauromates/nuxt-redmine",
+  "bugs": "sauromates/nuxt-redmine/issues",
   "license": "MIT",
   "type": "module",
   "exports": {
