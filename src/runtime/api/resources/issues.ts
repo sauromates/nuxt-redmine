@@ -3,7 +3,7 @@ import { RedmineResourceModule } from '../resource'
 import { type RedmineIssue } from '../../models/issue'
 import type { RedmineRequestOptions } from '../../types'
 
-export default class IssueResourceModule extends RedmineResourceModule {
+export default class RedmineIssueResourceModule extends RedmineResourceModule {
   protected resourcePath: string = '/issues'
 
   async get(id: number | string, options?: RedmineRequestOptions): Promise<RedmineIssue> {

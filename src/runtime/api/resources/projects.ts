@@ -3,7 +3,7 @@ import type { RedmineRequestOptions } from '../../types'
 import type { RedmineProject } from '../../models/project'
 import { type FetchOptions } from 'ofetch'
 
-export default class ProjectResourceModule extends RedmineResourceModule {
+export default class RedmineProjectResourceModule extends RedmineResourceModule {
   protected resourcePath: string = '/projects'
 
   async get(id: number | string, options?: RedmineRequestOptions): Promise<RedmineProject> {
