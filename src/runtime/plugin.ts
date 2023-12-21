@@ -3,7 +3,7 @@ import RedmineClient from '../runtime/api/client'
 import IssueResourceModule from './api/resources/issues'
 import ProjectResourceModule from './api/resources/projects'
 
-type ResourceModuleRegistry = {
+type RedmineResourceModuleRegistry = {
   issues: IssueResourceModule
   projects: ProjectResourceModule
 }
@@ -13,7 +13,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   const redmineApiKey = nuxtApp.$config.redmineApiKey
   const redmineClient = new RedmineClient(redmineBaseUrl, redmineApiKey)
 
-  const modules: ResourceModuleRegistry = {
+  const modules: RedmineResourceModuleRegistry = {
     issues: new IssueResourceModule(redmineClient),
     projects: new ProjectResourceModule(redmineClient)
   }

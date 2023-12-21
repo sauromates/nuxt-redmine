@@ -1,11 +1,11 @@
-import type { Resource } from '../api/resource'
+import type { RedmineResource } from '../api/resource'
 
 export type ShortRelationField = {
   id: number
   name: string
 }
 
-export type Issue = Resource & {
+export type RedmineIssue = RedmineResource & {
   subject: string
   description?: string
   project: ShortRelationField
