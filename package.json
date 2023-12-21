@@ -2,8 +2,8 @@
   "name": "nuxt-redmine",
   "version": "0.0.1",
   "description": "Redmine REST API integration for Nuxt",
-  "repository": "sauromates/nuxt-redmine",
-  "bugs": "sauromates/nuxt-redmine/issues",
+  "repository": "https://github.com/sauromates/nuxt-redmine",
+  "bugs": "https://github.com/sauromates/nuxt-redmine/issues",
   "license": "MIT",
   "type": "module",
   "exports": {
