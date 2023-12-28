@@ -1,8 +1,18 @@
 # Changelog
 
+## v0.0.2
+
+[compare changes](https://github.com/sauromates/nuxt-redmine/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- Issues rest api ([#2](https://github.com/sauromates/nuxt-redmine/pull/2))
+
+### ❤️ Contributors
+
+- Vsevolod Girenko
 
 ## v0.0.1
-
 
 ### 🚀 Enhancements
 
@@ -23,4 +33,3 @@
 ### ❤️ Contributors
 
 - Vsevolod Girenko <vs.girenko@mail.ru>
-

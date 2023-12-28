@@ -1,6 +1,6 @@
 {
   "name": "nuxt-redmine",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Redmine REST API integration for Nuxt",
   "repository": "https://github.com/sauromates/nuxt-redmine",
   "bugs": "https://github.com/sauromates/nuxt-redmine/issues",
