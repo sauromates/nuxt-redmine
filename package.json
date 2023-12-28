@@ -2,8 +2,8 @@
   "name": "nuxt-redmine",
   "version": "0.0.1",
   "description": "Redmine REST API integration for Nuxt",
-  "repository": "sauromates/nuxt-redmine",
-  "bugs": "sauromates/nuxt-redmine/issues",
+  "repository": "https://github.com/sauromates/nuxt-redmine",
+  "bugs": "https://github.com/sauromates/nuxt-redmine/issues",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,7 +23,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
+    "release": "npm run lint && npm run format && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "format": "prettier .  --write",
     "test": "vitest run",
@@ -42,6 +42,7 @@
     "@types/node": "^20.10.3",
     "changelogen": "^0.5.5",
     "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
     "nuxt": "^3.8.2",
     "prettier": "^3.1.1",
     "vitest": "^0.33.0"

@@ -1,20 +1,52 @@
-import type { Resource } from '../api/resource'
+import type { RedmineIssueCategory } from './category'
+import type { RedmineIssueStatus } from './status'
+import type { RedmineIssuePriority } from './priority'
+import type { RedmineProject } from './project'
+import type { RedmineTracker } from './tracker'
+import type { RedmineUser } from './user'
+import type { RedmineVersion } from './version'
 
-export type ShortRelationField = {
-  id: number
-  name: string
-}
-
-export type Issue = Resource & {
+export type RedmineIssue = {
+  id?: number
   subject: string
   description?: string
-  project: ShortRelationField
-  tracker: ShortRelationField
-  status: ShortRelationField & { isClosed: boolean }
-  priority?: ShortRelationField
-  author: ShortRelationField
-  assignedTo?: ShortRelationField
-  category?: ShortRelationField
-  fixedVersion?: ShortRelationField
-  doneRatio: number
+  project: Partial<Pick<RedmineProject, 'id' | 'name'>>
+  tracker: Partial<Pick<RedmineTracker, 'id' | 'name'>>
+  status: RedmineIssueStatus
+  priority?: Partial<Pick<RedmineIssuePriority, 'id' | 'name'>>
+  parent?: Pick<RedmineIssue, 'id' | 'subject'>
+  author: Partial<Pick<RedmineUser, 'id' | ('firstname' & 'lastname')>>
+  assigned_to?: Partial<Pick<RedmineUser, 'id' | ('firstname' & 'lastname')>>
+  category?: Partial<Pick<RedmineIssueCategory, 'id' | 'name'>>
+  fixed_version?: Partial<Pick<RedmineVersion, 'id' | 'name'>>
+  done_ratio: number
+  is_private: boolean
+  estimated_hours: number | null
+  total_estimated_hours: number | null
+  spent_hours: number
+  total_spent_hours: number
+  start_date: Date
+  due_date: Date
+  created_on: Date
+  updated_on: Date
+  closed_on: Date | null
+}
+
+export type RealRedmineIssue = RedmineIssue & {
+  id: number
+}
+
+export type NewRedmineIssue = Partial<RedmineIssue> & {
+  subject: string
+  project: Required<Pick<RedmineProject, 'id'>>
+  priority: Required<Pick<RedmineIssuePriority, 'id'>>
+  tracker: Required<Pick<RedmineTracker, 'id'>>
+}
+
+export type UpdatedRedmineIssue = Partial<RedmineIssue> & {
+  id: number
+  subject: string
+  project: Required<Pick<RedmineProject, 'id'>>
+  priority: Required<Pick<RedmineIssuePriority, 'id'>>
+  tracker: Required<Pick<RedmineTracker, 'id'>>
 }

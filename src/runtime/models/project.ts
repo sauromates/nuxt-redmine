@@ -1,6 +1,5 @@
-import type { Resource } from '../api/resource'
-
-export type Project = Resource & {
+export type RedmineProject = {
+  id?: number
   name: string
   identifier: string
   description?: string

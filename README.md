@@ -7,16 +7,18 @@
 
 Redmine REST API integration for Nuxt
 
+**DISCLAIMER: Package is at a very early stage of development and not suited for production. Any suggestions, bug reports and contributions are most welcome.**
+
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-  <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-redmine?file=playground%2Fapp.vue) -->
-  <!-- - [📖 &nbsp;Documentation](https://example.com) -->
+    <!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-redmine?file=playground%2Fapp.vue) -->
+  <!-- - [📖 &nbsp;Documentation](/docs) -->
 
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
 
-- Redmine REST API resources
-- Globally available `$redmine` plugin
+- Redmine REST API resources provided via Nuxt API routes
+- Fully typed composables for resource operations
 
 ## Quick Setup
 
@@ -54,10 +56,11 @@ export default defineNuxtConfig({
 export default defineNuxtConfig({
   modules: ['nuxt-redmine'],
   redmine: {
-    redmineApiKey: '',
+    redmineApiKey: '', // Admin API key is required!
     baseUrl: 'https://redmine.mydomain.com',
     // Optional
-    responseFormat: 'json'
+    responseFormat: 'json', // Currently the only supported format
+    resources: ['issues', 'users'] // Defaults to all available resources
   }
 })
 ```
@@ -68,24 +71,37 @@ export default defineNuxtConfig({
 NUXT_REDMINE_API_KEY=myverysecretkey
 ```
 
-That's it! You can now use Nuxt Redmine in your Nuxt app ✨
+That's it! Nuxt Redmine will automatically configure Nuxt API routes for Redmine queries, which you can use from composables or direct calls ✨
 
 ## Usage
 
-To use a module simply import a plugin definition from `useNuxtApp()` composable.
+Module provides composables for each Redmine REST resource (i.e. `/issues`). Being just wrappers for built-in `$fetch` call, they provide typed request and response objects and allow to use internal model types instead of direct usage of request body.
+
+Although composables are recommended for usage, it's also possible to use `useFetch` or `useAsyncData` directly, since module generates Nuxt API routes.
 
 ```ts
 <script setup lang="ts">
-const { $redmine } = useNuxtApp()
-const { data: issues } = useAsyncData('issues', () => $redmine.issues.getCollection())
+// Using a registry
+const { search } = useRedmineIssues()
+
+// Using composable to perform data fetching
+// This way query object will have IDE type completion
+const { data } = useAsyncData('issues', () => search({ query: { limit: 5, tracker_id: 2 } }))
+
+// Using direct API call to perform data fetching
+const { data } = useFetch('/api/redmine/issues', { query: { limit: 5, tracker_id: 2 } })
 </script>
 
 <template>
-  <div v-for="issue in issues" :key="issue.id">
+  <div v-for="issue in data.issues" :key="issue.id">
     {{ issue.subject }}
   </div>
 </template>
 ```
+
+## Testing
+
+Due to the purpose of the module, most of the testing is possible only against a real Redmine instance. Repository provides a Docker image of Redmine with preconfigured web server settings.
 
 ## License
 
