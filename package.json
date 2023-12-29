@@ -2,6 +2,15 @@
   "name": "nuxt-redmine",
   "version": "0.0.2",
   "description": "Redmine REST API integration for Nuxt",
+  "keywords": [
+    "redmine",
+    "nuxt",
+    "nuxt-api",
+    "nuxt-module",
+    "issue-tracking",
+    "project-management"
+  ],
+  "author": "Vsevolod Girenko <vs.girenko@mail.ru>",
   "repository": "https://github.com/sauromates/nuxt-redmine",
   "bugs": "https://github.com/sauromates/nuxt-redmine/issues",
   "license": "MIT",
