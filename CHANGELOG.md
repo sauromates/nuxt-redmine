@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.0.3
+
+[compare changes](https://github.com/sauromates/nuxt-redmine/compare/v0.0.2...v0.0.3)
+
+### 🚀 Enhancements
+
+- Issue attachments relation ([5d033ef](https://github.com/sauromates/nuxt-redmine/commit/5d033ef))
+- Added missing relations' fields and types ([9974aa9](https://github.com/sauromates/nuxt-redmine/commit/9974aa9))
+
+### 💅 Refactors
+
+- Simplified user relation field ([905c980](https://github.com/sauromates/nuxt-redmine/commit/905c980))
+- Removed changesets from optional relations ([afde38e](https://github.com/sauromates/nuxt-redmine/commit/afde38e))
+- Renamed included relations type ([74ea366](https://github.com/sauromates/nuxt-redmine/commit/74ea366))
+
+### 📖 Documentation
+
+- Included package keywords ([4a3409f](https://github.com/sauromates/nuxt-redmine/commit/4a3409f))
+
+### 🏡 Chore
+
+- **release:** V0.0.2 ([24c32cc](https://github.com/sauromates/nuxt-redmine/commit/24c32cc))
+
+### ❤️ Contributors
+
+- Vsevolod Girenko <vs.girenko@mail.ru>
+
 ## v0.0.2
 
 [compare changes](https://github.com/sauromates/nuxt-redmine/compare/v0.0.1...v0.0.2)

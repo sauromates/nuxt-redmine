@@ -1,6 +1,6 @@
 {
   "name": "nuxt-redmine",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Redmine REST API integration for Nuxt",
   "keywords": [
     "redmine",
