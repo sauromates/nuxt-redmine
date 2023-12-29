@@ -1,4 +1,4 @@
-import { type H3Event } from 'h3'
+import { useRuntimeConfig } from '#imports'
 import { type $Fetch, $fetch } from 'ofetch'
 import type { RedmineResource } from '../types/resource'
 
@@ -7,8 +7,8 @@ export type RedmineEndpointOptions = {
   query?: Record<string, any>
 }
 
-export const useRedmineClient = (event?: H3Event) => {
-  const config = useRuntimeConfig(event)
+export const useRedmineClient = () => {
+  const config = useRuntimeConfig()
   const { baseUrl, responseFormat: format } = config.public.redmine
   const apiKey = config.redmineApiKey
 

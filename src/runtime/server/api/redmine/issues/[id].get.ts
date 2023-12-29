@@ -4,7 +4,7 @@ import type { RealRedmineIssue } from '../../../../models/issue'
 import { useRedmineClient } from '../../../../composables/useRedmineClient'
 
 export default defineEventHandler<ShowRedmineIssue, Promise<RealRedmineIssue>>(async (event) => {
-  const redmine = useRedmineClient(event)
+  const redmine = useRedmineClient()
   const issueId = getRouterParam(event, 'id')
 
   if (!issueId) {

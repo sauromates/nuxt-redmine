@@ -2,7 +2,7 @@ import { defineEventHandler } from '#imports'
 import { useRedmineClient } from '../../../../composables/useRedmineClient'
 
 export default defineEventHandler<void, Promise<void>>(async (event) => {
-  const redmine = useRedmineClient(event)
+  const redmine = useRedmineClient()
   const issueId = getRouterParam(event, 'id')
 
   if (!issueId) {

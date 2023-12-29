@@ -3,7 +3,7 @@ import type { UpdateRedmineIssue } from '../../../../types/requests/issues/updat
 import { useRedmineClient } from '../../../../composables/useRedmineClient'
 
 export default defineEventHandler<UpdateRedmineIssue, Promise<void>>(async (event) => {
-  const redmine = useRedmineClient(event)
+  const redmine = useRedmineClient()
   const body = await readBody(event)
   const issueId = getRouterParam(event, 'id')
 

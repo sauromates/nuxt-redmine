@@ -4,7 +4,7 @@ import type { CreateRedmineIssue } from '../../../../types/requests/issues/creat
 import type { RealRedmineIssue } from '../../../../models/issue'
 
 export default defineEventHandler<CreateRedmineIssue>(async (event): Promise<RealRedmineIssue> => {
-  const redmine = useRedmineClient(event)
+  const redmine = useRedmineClient()
   const body = await readBody(event)
 
   const endpoint = redmine.createEndpoint({ path: '/issues' })

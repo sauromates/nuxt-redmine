@@ -14,7 +14,7 @@ export type RedmineIssueCollection = {
  * `GET /issues` request handler
  */
 export default defineEventHandler<FindRedmineIssues, Promise<RedmineIssueCollection>>(async (event) => {
-  const redmine = useRedmineClient(event)
+  const redmine = useRedmineClient()
 
   const endpoint = redmine.createEndpoint({
     path: '/issues',
