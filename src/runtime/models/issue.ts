@@ -4,6 +4,7 @@ import type { RedmineIssuePriority } from './priority'
 import type { RedmineProject } from './project'
 import type { RedmineTracker } from './tracker'
 import type { RedmineVersion } from './version'
+import type { RedmineAttachment } from './attachment'
 
 export type RedmineIssue = {
   id?: number
@@ -29,6 +30,7 @@ export type RedmineIssue = {
   created_on: Date
   updated_on: Date
   closed_on: Date | null
+  attachments?: RedmineAttachment[]
 }
 
 export type RealRedmineIssue = RedmineIssue & {
