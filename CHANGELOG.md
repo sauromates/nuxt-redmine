@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.5
+
+[compare changes](https://github.com/sauromates/nuxt-redmine/compare/v0.0.4...v0.0.5)
+
+### 🩹 Fixes
+
+- Runtime config import ([d94b93d](https://github.com/sauromates/nuxt-redmine/commit/d94b93d))
+
+### 🏡 Chore
+
+- **release:** V0.0.4 ([3720a02](https://github.com/sauromates/nuxt-redmine/commit/3720a02))
+
+### ❤️ Contributors
+
+- Vsevolod Girenko <vs.girenko@mail.ru>
+
 ## v0.0.4
 
 [compare changes](https://github.com/sauromates/nuxt-redmine/compare/v0.0.3...v0.0.4)
