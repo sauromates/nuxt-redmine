@@ -3,7 +3,6 @@ import type { RedmineIssueStatus } from './status'
 import type { RedmineIssuePriority } from './priority'
 import type { RedmineProject } from './project'
 import type { RedmineTracker } from './tracker'
-import type { RedmineUser } from './user'
 import type { RedmineVersion } from './version'
 
 export type RedmineIssue = {
@@ -15,8 +14,8 @@ export type RedmineIssue = {
   status: RedmineIssueStatus
   priority?: Partial<Pick<RedmineIssuePriority, 'id' | 'name'>>
   parent?: Pick<RedmineIssue, 'id' | 'subject'>
-  author: Partial<Pick<RedmineUser, 'id' | ('firstname' & 'lastname')>>
-  assigned_to?: Partial<Pick<RedmineUser, 'id' | ('firstname' & 'lastname')>>
+  author: { id: number; name: string }
+  assigned_to?: { id: number; name: string }
   category?: Partial<Pick<RedmineIssueCategory, 'id' | 'name'>>
   fixed_version?: Partial<Pick<RedmineVersion, 'id' | 'name'>>
   done_ratio: number
