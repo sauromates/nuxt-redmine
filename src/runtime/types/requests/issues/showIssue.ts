@@ -1,10 +1,9 @@
 import type { RedmineRequest } from '../request'
 
-export type RedmineIssueRelation =
+export type RedmineIssueIncludedRelation =
   | 'children'
   | 'attachments'
   | 'relations'
-  | 'changesets'
   | 'journals'
   | 'watchers'
   | 'allowed_statuses'
@@ -16,6 +15,6 @@ export type RedmineIssueRelation =
  */
 export type ShowRedmineIssue = Omit<RedmineRequest, 'body'> & {
   query?: {
-    include?: RedmineIssueRelation | RedmineIssueRelation[]
+    include?: RedmineIssueIncludedRelation | RedmineIssueIncludedRelation[]
   }
 }
