@@ -5,6 +5,8 @@ import type { RedmineProject } from './project'
 import type { RedmineTracker } from './tracker'
 import type { RedmineVersion } from './version'
 import type { RedmineAttachment } from './attachment'
+import type { RedmineJournal } from './journal'
+import type { RedmineIssueRelation } from './relation'
 
 export type RedmineIssue = {
   id?: number
@@ -14,7 +16,7 @@ export type RedmineIssue = {
   tracker: Partial<Pick<RedmineTracker, 'id' | 'name'>>
   status: RedmineIssueStatus
   priority?: Partial<Pick<RedmineIssuePriority, 'id' | 'name'>>
-  parent?: Pick<RedmineIssue, 'id' | 'subject'>
+  parent?: Pick<RedmineIssue, 'id'>
   author: { id: number; name: string }
   assigned_to?: { id: number; name: string }
   category?: Partial<Pick<RedmineIssueCategory, 'id' | 'name'>>
@@ -30,7 +32,12 @@ export type RedmineIssue = {
   created_on: Date
   updated_on: Date
   closed_on: Date | null
+  watchers: { id: number; name: string }[]
   attachments?: RedmineAttachment[]
+  allowed_statuses?: RedmineIssueStatus[]
+  children?: Pick<RedmineIssue, 'id' | 'tracker' | 'subject'>[]
+  journals?: RedmineJournal[]
+  relations?: RedmineIssueRelation[]
 }
 
 export type RealRedmineIssue = RedmineIssue & {
