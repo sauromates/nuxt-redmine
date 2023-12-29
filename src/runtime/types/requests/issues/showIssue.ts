@@ -4,7 +4,6 @@ export type RedmineIssueRelation =
   | 'children'
   | 'attachments'
   | 'relations'
-  | 'changesets'
   | 'journals'
   | 'watchers'
   | 'allowed_statuses'
