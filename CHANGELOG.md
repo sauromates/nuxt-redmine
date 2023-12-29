@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.4
+
+[compare changes](https://github.com/sauromates/nuxt-redmine/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Api routes extensions ([2cc39fe](https://github.com/sauromates/nuxt-redmine/commit/2cc39fe))
+
+### ❤️ Contributors
+
+- Vsevolod Girenko <vs.girenko@mail.ru>
+
 ## v0.0.3
 
 [compare changes](https://github.com/sauromates/nuxt-redmine/compare/v0.0.2...v0.0.3)
